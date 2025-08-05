@@ -319,8 +319,8 @@ function getCurrentDateTime() {
 // ***** Question 38  *****
 function getDayOfWeek() {
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const now = new Date();
-    return days[now.getDay()];
+    const now = new Date();// تاريخ و وقت
+    return days[now.getDay()];// [0-6]
 }
 
 // ***** Question 39  *****
@@ -332,6 +332,7 @@ function containsElement(arr, x) {
 function Arraylength(arr) {
     return arr.length;
 }
+
 
 
 
