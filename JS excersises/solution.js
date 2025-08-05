@@ -21,7 +21,20 @@ console.log(assignSection(24)); // Section A
 
 
 // ***** Question 3 *****
+function fact(x) {
+    if (x < 0) 
+        return "Factorial not defined for negative numbers";
+    if (x === 0 || x === 1) 
+        return 1;
+    return x * fact(x - 1);
+}
 // ***** Question 4 *****
+function isPalindrome(str){
+    let cleaned=str.replace(/[^a-z0-9]/g, ''); //Phrases (ignoring spaces and punctuation)
+        let reversed = cleaned.split('').reverse().join('');
+return cleaned==reversed;
+
+}
 // ***** Question 5 *****
 function LargestSalesNumber(reg1,reg2,reg3){
 let largest;
@@ -93,10 +106,226 @@ function factorial(x){
         fac*=i; 
     return fac;
 }
+
+
 // ***** Question 11  *****
-function computeGCD(x,y){
-    
+function GCD(x,y){
+let gcd=1;
+let smaller=Math.min(x,y);
+for(let i=1; i<=smaller; i++){
+    if(x%i===0 && y%i===0)
+        gcd=i;
 }
+return gcd;
+}
+
+
+// ***** Question 12  *****
+function isPerfect(x){
+      if (x <= 1) 
+        return false;
+
+    let sum=0;
+    for(let i=1; i<x; i++){//x\2 for  make it faster
+        if(x%i===0)
+            sum+=i;
+    }
+    return sum===x;
+}
+
+
+// ***** Question 13  *****
+function LCM(x,y){
+   return Math.abs(x*y)/GCD(x,y);
+
+}
+
+
+// ***** Question 14  *****
+function removeDuplicate(numbers){
+     withoutRepeat=[];
+     for (let num of numbers) {
+    if (!withoutRepeat.includes(num)) {
+      unique.push(num);
+    }
+  }
+
+  return unique;
+}
+
+
+// ***** Question 15  *****
+function totalPrice(cart){
+  let  sum=0;
+    for(let i=0; i<cart.length; i++)
+        sum+=cart[i];
+    return sum;
+}
+
+
+// ***** Question 16  *****
+function findMax(steps){
+   let largest=steps[0]
+    for(let i=1;i<steps.length; i++){
+        if(steps[i]>largest)
+            largest=steps[i];
+    }
+return largest;
+}
+
+
+// ***** Question 17  *****
+function findMin(expenses){
+   let smallest=expenses[0]
+    for(let i=1;i<expenses.length; i++){
+        if(expenses[i]<smallest)
+            smallest=expenses[i];
+    }
+return smallest;
+}
+
+
+// ***** Question 18  *****
+function commonMovies(list1,list2){
+    let common=[];
+
+    for(let i=0; i<list1.length; i++){
+        for(let j=0; j<list2.length;j++){
+            if(list1[i]===list2[j])
+                common.push(list1[i]);
+        }
+    }
+    return common;
+}
+
+
+// ***** Question 19  *****
+function repeatNo(arr,product_ID){
+    count=0;
+        for(let i=0; i<arr.length; i++){
+            if(arr[i]==product_ID)
+                 count++
+        } 
+        return count;
+}
+
+
+// ***** Question 20  *****
+function search(arr, song){
+    for(let i=0; i<arr.length; i++){
+        if(arr[i]===song)
+            return i;
+    }
+    return -1 // if not found 
+}
+
+// ***** Question 21  *****
+function sort(arr){
+        for(let i=0; i<arr.length; i++){
+             let min=i;
+             for( let j=i+1; j<arr.length; j++){
+                if(arr[j]< arr[i])
+                    min=j;// compare with other elements 
+                }
+                if(min!==i){
+                    let temp=arr[i];
+                    arr[i]=arr[min];
+                    arr[min]=temp;//نبدل 
+                }
+        }
+return arr;
+}
+
+
+// ***** Question 22  *****
+function stringToArray(str){
+    let arr=[];
+    for(let i=0;i<str.length;i++){
+       arr.push(str[i]);
+    }
+return arr;
+}
+
+
+// ***** Question 23  *****
+function arrayToString(arr){
+    let str="";
+        for(let i=0;i<arr.length;i++)
+            str+=arr[i];
+return str;
+}
+
+
+// ***** Question 24  *****
+function strLength(str){
+    return str.length;
+}
+
+
+// ***** Question 25  *****
+function upperStr(str){
+    return str.toUpperCase();
+}
+// ***** Question 26  *****
+function lowerStr(str){
+    return str.toLowerCase();
+}
+// ***** Question 27  *****
+function isContain(str,subStr){
+        return str.includes(subStr);
+
+}
+// ***** Question 28  *****
+function removeAroundSpace(str){
+     return str.trim();
+}
+// ***** Question 29  *****
+function getChar(str,index){
+    return str[index];
+}
+// ***** Question 30  *****
+function strStart(str,substr){
+    return str.startsWith();
+}
+// ***** Question 31  *****
+function strEnd(str,substr){
+    return str.endsWith();
+}
+// ***** Question 32  *****
+function getStrBegin(str,len){
+    return str.subString(0,len);//or slice
+}
+// ***** Question 33  *****
+
+// ***** Question 34  *****
+// ***** Question 35  *****
+function numToStr(num){
+    return  num.toSring();// or string(num)
+}
+// ***** Question 36  *****
+function strtoNum(str){
+    return  parseInt(str);// or Number(str) or parseFloat(str)
+}
+// ***** Question 37  *****
+function getCurrentDateTime() {
+    const now = new Date();
+    return now.toString(); // Full date and time as a string
+}
+// ***** Question 38  *****
+function getDayOfWeek() {
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const now = new Date();
+    return days[now.getDay()];
+}
+// ***** Question 39  *****
+function containsElement(arr, x) {
+    return arr.includes(x);
+}
+// ***** Question 40  *****
+function Arraylength(arr) {
+    return arr.length;
+}
+
 
 
 
