@@ -5,20 +5,16 @@ const product2=document.getElementById('2');
 let x=product1.textContent;
 product1.textContent=product2.textContent;
 product2.textContent=x;
-
 }
 
-
 // ***** Question 2 *****
-let ticket_no;
-function classification(ticket_no){
-    if(ticket_no%2===0)
-        return "Section A"
-    else
-         return "Section A"
-}// Testing
-console.log(assignSection(24)); // Section A
-
+function EvenOrOdd(num) {
+    if (num % 2 === 0) {
+        return "Section A (Even)";
+    } else {
+        return "Section B (Odd)";
+    }
+}
 
 // ***** Question 3 *****
 function fact(x) {
@@ -28,13 +24,14 @@ function fact(x) {
         return 1;
     return x * fact(x - 1);
 }
+
 // ***** Question 4 *****
 function isPalindrome(str){
     let cleaned=str.replace(/[^a-z0-9]/g, ''); //Phrases (ignoring spaces and punctuation)
         let reversed = cleaned.split('').reverse().join('');
 return cleaned==reversed;
-
 }
+
 // ***** Question 5 *****
 function LargestSalesNumber(reg1,reg2,reg3){
 let largest;
@@ -45,9 +42,7 @@ else if( reg2>=reg1 && reg2>=reg3)
 else if( reg3>=reg1 && reg3>=reg2)
     largest=reg3; 
 return largest;
-}//testing 
-console.log(LargestSalesNumber(1000,1200,800)); // 1200
-
+}
 
 // ***** Question 6 *****
 function motivationalTracker(days){
@@ -62,9 +57,7 @@ function motivationalTracker(days){
              fib.push(fib[i - 1] + fib[i - 2]);
     }
     return fib;
-}//testing
-console.log(motivationalTracker(8)); //output: [0,1,1,2,3,5,8,13,21,34]
-
+}
 
 // ***** Question 7 *****
 function sumOfDigits(purchaseID){
@@ -76,9 +69,7 @@ purchaseID= Math.floor(number / 10); // Remove last digit
 return sum;
 }
 
-
 // ***** Question 8 *****
-
 function isPrime(x){
     if(x<=1) 
         return false;
@@ -87,7 +78,6 @@ function isPrime(x){
             return false; }
     return true;
 }
-
 
 // ***** Question 9 *****
 function reverseSring(word){
@@ -98,7 +88,6 @@ function reverseSring(word){
 return reversed;
 }
 
-
 // ***** Question 10  *****
 function factorial(x){
     fac=1;
@@ -106,7 +95,6 @@ function factorial(x){
         fac*=i; 
     return fac;
 }
-
 
 // ***** Question 11  *****
 function GCD(x,y){
@@ -118,7 +106,6 @@ for(let i=1; i<=smaller; i++){
 }
 return gcd;
 }
-
 
 // ***** Question 12  *****
 function isPerfect(x){
@@ -133,19 +120,17 @@ function isPerfect(x){
     return sum===x;
 }
 
-
 // ***** Question 13  *****
 function LCM(x,y){
    return Math.abs(x*y)/GCD(x,y);
 
 }
 
-
 // ***** Question 14  *****
 function removeDuplicate(numbers){
-     withoutRepeat=[];
+    let cleanArr=[];
      for (let num of numbers) {
-    if (!withoutRepeat.includes(num)) {
+    if (!cleanArr.includes(num)) {
       unique.push(num);
     }
   }
@@ -153,19 +138,18 @@ function removeDuplicate(numbers){
   return unique;
 }
 
-
 // ***** Question 15  *****
-function totalPrice(cart){
-  let  sum=0;
-    for(let i=0; i<cart.length; i++)
-        sum+=cart[i];
+function totalPrice(cart) {
+    let sum = 0;
+    for (const element of cart){
+        sum += element;}
+
     return sum;
 }
 
-
 // ***** Question 16  *****
 function findMax(steps){
-   let largest=steps[0]
+   let largest=steps[0];
     for(let i=1;i<steps.length; i++){
         if(steps[i]>largest)
             largest=steps[i];
@@ -173,10 +157,9 @@ function findMax(steps){
 return largest;
 }
 
-
 // ***** Question 17  *****
 function findMin(expenses){
-   let smallest=expenses[0]
+   let smallest=expenses[0];
     for(let i=1;i<expenses.length; i++){
         if(expenses[i]<smallest)
             smallest=expenses[i];
@@ -184,12 +167,11 @@ function findMin(expenses){
 return smallest;
 }
 
-
 // ***** Question 18  *****
 function commonMovies(list1,list2){
     let common=[];
 
-    for(let i=0; i<list1.length; i++){
+        for(let i=0; i<list1.length;i++){
         for(let j=0; j<list2.length;j++){
             if(list1[i]===list2[j])
                 common.push(list1[i]);
@@ -198,17 +180,15 @@ function commonMovies(list1,list2){
     return common;
 }
 
-
 // ***** Question 19  *****
 function repeatNo(arr,product_ID){
-    count=0;
-        for(let i=0; i<arr.length; i++){
-            if(arr[i]==product_ID)
+   let count=0;
+        for(const element of arr){
+            if(element==product_ID)
                  count++
         } 
         return count;
 }
-
 
 // ***** Question 20  *****
 function search(arr, song){
@@ -236,7 +216,6 @@ function sort(arr){
 return arr;
 }
 
-
 // ***** Question 22  *****
 function stringToArray(str){
     let arr=[];
@@ -246,7 +225,6 @@ function stringToArray(str){
 return arr;
 }
 
-
 // ***** Question 23  *****
 function arrayToString(arr){
     let str="";
@@ -255,72 +233,101 @@ function arrayToString(arr){
 return str;
 }
 
-
 // ***** Question 24  *****
 function strLength(str){
     return str.length;
 }
 
-
 // ***** Question 25  *****
 function upperStr(str){
     return str.toUpperCase();
 }
+
 // ***** Question 26  *****
 function lowerStr(str){
     return str.toLowerCase();
 }
+
 // ***** Question 27  *****
 function isContain(str,subStr){
         return str.includes(subStr);
-
 }
+
 // ***** Question 28  *****
 function removeAroundSpace(str){
      return str.trim();
 }
+
 // ***** Question 29  *****
 function getChar(str,index){
     return str[index];
 }
+
 // ***** Question 30  *****
 function strStart(str,substr){
     return str.startsWith();
 }
+
 // ***** Question 31  *****
 function strEnd(str,substr){
     return str.endsWith();
 }
+
 // ***** Question 32  *****
 function getStrBegin(str,len){
     return str.subString(0,len);//or slice
 }
+
 // ***** Question 33  *****
+function countdownTimer(seconds){//تنازلي
+ let timeLeft = seconds;
+
+    let timer = setInterval(() => {//يتكرر الكود كل ثانية
+        console.log(timeLeft); // عرض الوقت المتبقي
+        timeLeft--;
+
+        if (timeLeft < 0) { 
+            clearInterval(timer); // إيقاف المؤقت
+            console.log("انتهى الوقت ⏳");
+        }
+    }, 1000); // 1000 = ثانية واحدة
+}
 
 // ***** Question 34  *****
+function RandomNo(min, max) {
+    let range = max - min + 1;
+    let random = Math.random() * range;
+    return min + parseInt(random);
+}
+
 // ***** Question 35  *****
 function numToStr(num){
     return  num.toSring();// or string(num)
 }
+
 // ***** Question 36  *****
 function strtoNum(str){
     return  parseInt(str);// or Number(str) or parseFloat(str)
 }
+
 // ***** Question 37  *****
 function getCurrentDateTime() {
     const now = new Date();
     return now.toString(); // Full date and time as a string
 }
+
 // ***** Question 38  *****
 function getDayOfWeek() {
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const now = new Date();
     return days[now.getDay()];
 }
+
 // ***** Question 39  *****
 function containsElement(arr, x) {
     return arr.includes(x);
 }
+
 // ***** Question 40  *****
 function Arraylength(arr) {
     return arr.length;
